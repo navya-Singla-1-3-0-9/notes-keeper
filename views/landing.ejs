@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- CSS only -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="/socket.io/socket.io.js"></script>
+<link rel="stylesheet" type="text/css" href="css/navbar.css">
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="css/main.css">
+<script  src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>HOME</title>
+<%-include('partials/navbar.ejs')%>
+  <div class="open">
+    <a href="/folders">
+    <div class="notes">
+      <div class="card mb-3">
+      <img class="card-img-top" src="https://images.squarespace-cdn.com/content/v1/56acc1138a65e2a286012c54/1522329772710-DO415TCYVGSQAMRFAI9Q/notes-3236566_1920.jpg?format=1000w" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">TAKE NOTES</h5>
+        <p class="card-text">Find Saved Notes here, create new notes. share notes with classmates</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="/todo">
+    <div class="todo">
+      <div class="card mb-3">
+      <img class="card-img-top" src="https://lh3.googleusercontent.com/Z7l0JfqTeeK41_DGK7cRnkmagm_brdcAWCEmpXuGj_rUmOVr9vyuuoIaJtXngW1nZVg0bWjYlmGQPQsE11Og_nMH=w640-h400-e365-rj-sc0x00ffffff" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">My Todo List</h5>
+        <p class="card-text">Organize tasks! Perfect place to keep track of all your work!</p>
+      
+      
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="/decks">
+    <div class="cards">
+      <div class="card mb-3">
+      <img class="card-img-top" src="https://storage.googleapis.com/cdn.classmonitor.com/community/content_media/content_media_1569218081_187533.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">FLASHCARDS</h5>
+        <p class="card-text">Create flashcards!</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      
+      </div>
+    </div>
+  </div>
+</a>
+
+
+ <a href="/groups">
+    <div class="groups">
+      <div class="card mb-3">
+      <img class="card-img-top" src="https://s35691.pcdn.co/wp-content/uploads/2018/04/student-led-study-group-library-id842920176.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">STUDY GROUPS</h5>
+        <p class="card-text">Form study groups with friends and classmates. Chat, discuss, connect!</p>
+      
+      </div>
+    </div>
+  </div>
+</a>
+
+
+
+ <a href="/tests">
+    <div class="tests">
+      <div class="card mb-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpBHbpPcdk1G_Gc2XBpmDraNhg2m_T9SywhA&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">My Tests</h5>
+        <p class="card-text">Organize your tests. Mark important notes, study instantly!</p>
+      
+      
+      </div>
+    </div>
+  </div>
+</a>
+
+ 
+  </div>
+</head>
+<body>
+ 

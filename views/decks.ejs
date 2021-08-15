@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- CSS only -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="/socket.io/socket.io.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="css/folderpg.css">
+<link rel="stylesheet" type="text/css" href="css/navbar.css">
+<script  src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>Decks</title>
+</head>
+<body>
+	<%-include('partials/navbar.ejs')%>
+	  <script type="text/JavaScript">
+      const username= "<%=username%>"
+  </script>
+  	<script type="text/javascript">
+	
+	</script>
+	<div class="head">
+		<h1 style="margin-left:5px;margin-top:2px;font-style: italic;">My Decks</h1>
+	</div>
+	<form class="create">
+			<input style=" border: none;
+  border-bottom: 2px solid red; margin-left: 60%;"type="text" name="folder" placeholder="type folder name" id="new_folder" required>
+			<button type="submit" class="btn btn-info rounded-pill newf" >CREATE NEW DECK</button>
+	</form>
+	<div class="folders">
+	<%if(decks.length==0){%>
+		<h4 class="text-muted">No folders</h4>
+	<%}else{%>
+		
+			<%for(let f of decks){%>
+			<div style="margin-left: 50%;
+    background-color: yellowgreen;
+    height: 100px;
+    width: 200px;
+    padding-top: 40px;
+    font-size: 20px;
+    border-radius: 10%;
+    color: brown;
+    text-align: center;" class= "f-col text-center">
+				<a href="/decks/<%=f%>">
+					<%let color  = '#'+(Math.random()*0xFFFFFF<<0).toString(16)%>
+					<i class="fas fa-folder fa-7x f-icon" style="color: <%=color%>"></i>
+					<p><%=f%></p>
+				</a>
+			</div>
+			<%}%>
+		
+	<%}%>
+
+</div>
+
+		
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+     <script src="deck.js"></script>
+     <script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

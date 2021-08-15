@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- CSS only -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="/socket.io/socket.io.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="/css/create.css">
+<link rel="stylesheet" type="text/css" href="/css/navbar.css">
+<script  src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>Folders</title>
+</head>
+<body>
+	<%-include('partials/navbar.ejs')%>
+
+	<script type="text/javascript">
+		const fldr= "<%=folder%>"
+		const username= "<%=username%>"
+		const roomid= "<%=roomid%>"
+	</script>
+	
+		<label style="font-family: Garamond, serif; margin-left: 58%;">TITLE</label>
+		<br>
+		<input style="border: 1px solid #848484;
+	-moz-border-radius-topleft: 30px;
+	-webkit-border-top-left-radius: 30px;
+	border-top-left-radius: 30px;
+	-moz-border-radius-topright: 30px;
+	-webkit-border-top-right-radius: 30px;
+	border-top-right-radius: 30px;
+	border: 1px solid #848484;
+	outline:0;
+	height:25px;
+	width: 275px;
+	padding-left:20px;
+	margin-left: 50%;
+	border-color: green;
+	color: brown;
+	padding-right:20px;" type="text" name="title" class="title" value="<%=title%>">
+	<div class="note">
+		<div class="controls" style="background-color: dimgrey">
+			<button class="bold"><b>B</b></button>
+			<button class="italic"><em>I</em></button>
+			<button class="underline"><u>U</u></button>
+			<input class="font-color" type="color">
+			<button class="left"><i class="fas fa-align-left"></i></button>
+			<button class="center"><i class="fas fa-align-center"></i></button>
+			<button class="right"><i class="fas fa-align-right"></i></button>
+			<button class="share"><i class="fas fa-share-alt-square"></i></button>
+			<button class="collab"><i class="far fa-handshake"></i></button>
+		</div>
+		<hr>
+		<div class="editor" contenteditable="true" name="content"><%-content%></div>	
+		<button class="btn btn-primary rounded-pill download">Download</button>
+		<button class="btn btn-primary rounded-pill save">Save</button>
+		
+</form>
+		
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+     <script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+     <script  src="/note.js"></script>
+
+</body>
+</html>

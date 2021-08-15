@@ -1,0 +1,61 @@
+<%- include("partials/header2") -%>
+<!-- modal -->
+  <script type="text/javascript">
+    const username= "<%=username%>"
+  </script>
+    <div class="modal" id="todo_form" >
+      <div class="header">
+        <div class="title">Add Todo</div>
+        <button class="btn close-modal">&times;</button>
+      </div>
+      <div class="body">
+        <input type="text" id="todo_input" />
+        <input type="submit" value="Add Todo" id="todo_submit" />
+      </div>
+    </div>
+    <!-- todo -->
+    <div class="todo-container">
+      <div class="status no-status" id="no_status">
+        <h1>No Status</h1>
+         <button id="add_btn" data-target-modal="#todo_form">+ Add Todo</button>
+        <%for(let task of rest){%>
+           <div class="todo" draggable="true">
+             <%-task.task_name%>
+           </div>
+        <%}%>
+          <%for(let task of nostat){%>
+           <div class="todo" draggable="true">
+             <%-task.task_name%>
+           </div>
+        <%}%>
+      
+      </div>
+      <div class="status not-started">
+        <h1>Not Started</h1>
+         <%for(let task of ns){%>
+           <div class="todo" draggable="true">
+             <%-task.task_name%>
+           </div>
+        <%}%>
+      </div>
+      <div class="status in-progress">
+        <h1>In Progress</h1>
+         <%for(let task of in_prog){%>
+           <div class="todo" draggable="true">
+             <%-task.task_name%>
+           </div>
+        <%}%>
+      </div>
+      <div class="status completed">
+        <h1>Completed</h1>
+        <%for(let task of completed){%>
+           <div class="todo" draggable="true">
+             <%-task.task_name%>
+           </div>
+        <%}%>
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+
+<%- include("partials/footer2") -%>

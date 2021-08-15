@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- CSS only -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="/socket.io/socket.io.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" type="text/css" href="/css/notes.css">
+  <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+<script  src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>Folders</title>
+</head>
+<body>
+<%-include('partials/navbar.ejs')%>
+	<div class="head">
+		<h1 style="margin-left: 4%;margin-top: 2%; font-style:italic;" >My Notes</h1>
+	</div>
+	<a href="/folders/<%=folder%>/create"><button style="background-color:green;margin-top:2%;margin-left: 4%;"class="btn btn-primary">New  note</button></a>
+	<%if(notes.length==0){%>
+		<h4 style="margin-top:10%;font-size:150px;margin-left: 30%; font-style: italic;" class="text-muted">No Notes</h4>
+	<%}else if(folder!="shared" && folder!="collaborated"){%>
+		<div class="folders">
+			<%for(let n of notes){%>
+			<div class= "f-col text-center">
+				<a href="/folders/<%=folder%>/<%=n%>">
+					<%let color  = '#'+(Math.random()*0xFFFFFF<<0).toString(16)%>
+					<i class="fas fa-sticky-note fa-7x f-icon" style="color: <%=color%>"></i>
+					<p><%=n%></p>
+				</a>
+			</div>
+			<%}%>
+		</div>
+	<%}else if(folder=="shared"){%>
+		<div class="folders">
+			<%for(let n of notes){%>
+			<div class= "f-col text-center">
+				<a href="/shared/<%=n.name%>">
+					<%let color  = '#'+(Math.random()*0xFFFFFF<<0).toString(16)%>
+					<i class="fas fa-sticky-note fa-7x f-icon" style="color: <%=color%>"></i>
+					<p><%=n.name%></p>
+					<p class="text-mutes">Shared by <%=n.shared_by%></p>
+				</a>
+			</div>
+			<%}%>
+		</div>
+	<%}else{%>
+	<div class="folders">
+			<%for(let n of notes){%>
+			<div class= "f-col text-center">
+				<a href="/collab/<%=n.name%>/<%=n.roomid%>">
+					<%let color  = '#'+(Math.random()*0xFFFFFF<<0).toString(16)%>
+					<i class="fas fa-sticky-note fa-7x f-icon" style="color: <%=color%>"></i>
+					<p><%=n.name%></p>
+				</a>
+			</div>
+			<%}%>
+		</div>
+	<%}%>
+
+		
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+     <script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

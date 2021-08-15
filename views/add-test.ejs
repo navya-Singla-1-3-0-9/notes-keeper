@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- CSS only -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="/socket.io/socket.io.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" type="text/css" href="/css/add.css">
+<link rel="stylesheet" type="text/css" href="css/navbar.css">
+<script  src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>Add a Test</title>
+<%-include('partials/navbar.ejs')%>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		const username="<%=username%>"
+	</script>
+	<h1 class="text-center">ADD TEST</h1>
+	<div class="container">
+	<form class="frm">
+		<div class="form-group mb-3">
+			<label class="form-label">Test Name</label>
+			<input type="text" name="testname" class="testname form-control">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Subject</label>
+			<input type="text" name="sub" class="sub form-control">
+		</div>
+		<div class="mb-3">
+			<div class="form-row">
+				<div class="form-group col-6">
+					<label>Date</label>
+					<input type="text" name="date" class="date form-control">
+				</div>
+				<div class="form-group col-6">
+					<label>Month</label>
+					<input type="text" name="month" class="month form-control">
+				</div>
+			</div>
+		<div class="mb-3">
+			<label class="form-label mb-3">Select Important Notes:</label>
+			<% for(let d of data){%>
+			<h5 class= "mb-3" style="text-transform: uppercase;"><%=d.folder%></h5>
+				<%for(let n of d.notes){%>
+				 <input type="checkbox" name="chb[]" class="<%=d.folder%> imp mb-3" value="<%=n%>" class="form-check-input">
+  				<label for="<%=n%>" class= "form-check-label mb-3"><%=n%></label>
+  				<%}%>
+			<%}%>
+		</div>
+		<button class="btn btn-dark add rounded-pill"> SUBMIT </button>
+	</form>
+		
+</div>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+     <script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+     <script src="addtest.js"></script>
+
+</body>
+</html>
