@@ -1,0 +1,21 @@
+body{
+	background-image: url('https://thumbs.dreamstime.com/b/online-education-training-courses-e-learning-distance-exam-preparation-home-schooling-web-banner-background-work-workplace-201219103.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+	/*padding-left: 50px;*/
+	margin-bottom: 7%;
+}
+
+.container{
+	background-color: white;
+	margin-left: 30%;
+	margin-bottom: 7%;
+	width: 40%;
+	margin-top: 5%;
+	border: 2px solid black;
+	border-radius: 25px;
+	padding: 5%;
+}

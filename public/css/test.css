@@ -1,0 +1,42 @@
+body{
+	background-image: url('https://i.pinimg.com/originals/34/9d/b4/349db45ebb7e14c81a6d31590829b3e9.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+	/*padding-left: 50px;*/
+	margin-bottom: 7%;
+}
+
+.notes{
+	margin-top: 5%;
+	margin-left:10%;
+	margin-right: 10%;
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto;
+	grid-gap: 10%;
+}
+a:link{
+	color: black;
+	text-decoration: none;
+
+}
+a:visited{
+	color: black;
+	text-decoration: none;
+}
+.container{
+	margin-left: 25%;
+
+	
+}
+.card{
+background-color: #e4d1e1;
+color: white;
+	
+	border: none;
+	border-radius: 25px;
+	box-shadow: 5px 10px 8px #888888;
+	width: 50%;
+}

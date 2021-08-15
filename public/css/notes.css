@@ -1,0 +1,29 @@
+.folders{
+	margin-top: 5%;
+	margin-left:10%;
+	margin-right: 10%;
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+	grid-gap: 10%;
+}
+a:link{
+	color: black;
+	text-decoration: none;
+
+}
+a:visited{
+	color: black;
+	text-decoration: none;
+
+}
+
+body{
+	background-image: url('https://previews.123rf.com/images/bondd/bondd1908/bondd190800050/128001064-school-study-concept-background-simple-pattern-on-a-white-background-different-multi-colored-pencils.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+	/*padding-left: 50px;*/
+	margin-bottom: 7%;
+}

@@ -1,0 +1,28 @@
+.folders{
+	margin-top: 5%;
+	margin-right: 10%;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10%;
+}
+.crd{
+	margin: 20px;
+  padding: 20px;
+  width: 500px;
+  min-height: 200px;
+  border-radius: 10px;
+  margin-left: 15%;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;background: radial-gradient(#76b2fe, #b69efe);
+}
+
+body{
+	background-image: url('https://thumbs.dreamstime.com/z/open-book-hardback-books-wooden-table-education-background-back-to-school-copy-space-text-75367702.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+	/*padding-left: 50px;*/
+	margin-bottom: 7%;
+}
